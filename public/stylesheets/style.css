@@ -12,8 +12,19 @@ html {
 }
 
 h1 {
-  display: inline;
+  padding: 2rem;
+
   font-size: 4em;
+  background: #ef476f;
+  color: white;
+  box-shadow: 10px 10px black;
+}
+
+h2, p {
+  padding: 2rem;
+  color: white;
+  background-color: #118ab2;
+  box-shadow: 5px 5px black;
 }
 
 body {
@@ -26,13 +37,30 @@ body {
   color: #2a563f;
 }
 
+button {
+  padding: 1em;
+  margin: 1em;
+  border: 0px solid #2a563f;
+  border-radius: .25em;
+  box-shadow: 2rem 2rem 2rem black;
+
+  background: #2a563f;
+  color: white;
+  font-family: 'VCR';
+  font-size: 2em;
+}
+
+button:hover {
+  cursor: pointer;
+}
+
 nav {
   display: flex;
   flex-direction: column;
   align-items: center;
-  padding: 2em;
+  padding: 2rem;
 
-  font-size: 3em;
+  font-size: 3rem;
 }
 
 a {
@@ -44,8 +72,50 @@ a:hover {
   background: #e4d7bc;
 }
 
+form {
+  display: flex;
+  flex-direction: column;
+  flex-grow: 4;
+  padding: 2rem;
+  font-family: 'VCR';
+
+}
+
+input, label {
+  padding: 1rem;
+  margin: 1rem;
+  
+  font-size: 2rem;
+  font-family: 'VCR';
+}
+
+footer {
+  display: flex;
+  flex-direction: column;
+  background: #ffd166;
+}
+
 svg {
   margin: 1em;
+}
+
+.primary {
+  background: #06d6a0;
+  color: white;
+  font-family: 'VCR';
+}
+
+.red {
+  background: #ef476f;
+}
+
+.blue {
+  background: #118ab2;
+  color: white;
+}
+
+.yellow {
+  background: #ffd166;
 }
 
 .left {
@@ -62,4 +132,47 @@ svg {
   display: inline-block;
   vertical-align: text-top;
   margin-top: -2.5px;
+}
+
+.choices {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-evenly;
+  padding: .5em;
+}
+
+
+/**** Animations *****/
+
+/* Pulse Grow */
+@-webkit-keyframes hvr-pulse-grow {
+  to {
+    -webkit-transform: scale(1.1);
+    transform: scale(1.1);
+  }
+}
+@keyframes hvr-pulse-grow {
+  to {
+    -webkit-transform: scale(1.1);
+    transform: scale(1.1);
+  }
+}
+.hvr-pulse-grow {
+  display: inline-block;
+  vertical-align: middle;
+  -webkit-transform: perspective(1px) translateZ(0);
+  transform: perspective(1px) translateZ(0);
+  box-shadow: 0 0 1px rgba(0, 0, 0, 0);
+}
+.hvr-pulse-grow:hover, .hvr-pulse-grow:focus, .hvr-pulse-grow:active {
+  -webkit-animation-name: hvr-pulse-grow;
+  animation-name: hvr-pulse-grow;
+  -webkit-animation-duration: 0.3s;
+  animation-duration: 0.3s;
+  -webkit-animation-timing-function: linear;
+  animation-timing-function: linear;
+  -webkit-animation-iteration-count: infinite;
+  animation-iteration-count: infinite;
+  -webkit-animation-direction: alternate;
+  animation-direction: alternate;
 }
